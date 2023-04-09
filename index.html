@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            background-color: yellow;
+            padding: 7rem;
+            
+        }
+        body{
+           background-color: aqua; 
+           padding: 5px;
+           text-align: center;
+           margin:0
+           
+    
+
+        }
+        input{
+            background-color: blueviolet;
+        }
+        label{
+            background-color: white;
+            text-align: left;
+            
+        }
+        header {
+         background: #f4f4f4;
+         padding: 1rem;
+         text-align: center;
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Appointment App</h1>
+    </header>
+    <form onsubmit="saveTolocalstorage(event)">
+        <label for="Name">Name</label><br>
+        <input type="text" Name="username" value="jhon"></input><br>
+        <label for="Name">Email</label><br>
+        <input type="email" Name="EmailId" value="hariom@123"></input><br>
+        <label for="Telephone">Mobile Number</label><br>
+        <input type="text number" Name="Mobile No" value="7408835571"></input><br>
+        <button>Submit</button>
+    </form>
+    <script>
+        function saveTolocalstorage(event){
+        event.preventDefault();
+        const name=event.target.username.value;
+        const email=event.target.EmailId.value;
+        let obj={
+            Name:name,
+            Email:email,
+        }
+        localStorage.setItem('userdetails',JSON.stringify(obj))
+        }
+    </script>
+</body>
+</html>
